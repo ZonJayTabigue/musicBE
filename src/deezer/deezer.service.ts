@@ -73,7 +73,6 @@ export class DeezerService {
         storedAlbums.push(storedAlbum);
       }
 
-      // Remove duplicates based on album title and artist name
       const uniqueAlbums = storedAlbums.filter((album, index, self) =>
         index === self.findIndex((a) =>
           a.album_title === album.album_title && a.artist_name === album.artist_name
