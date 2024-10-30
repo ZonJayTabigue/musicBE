@@ -1,10 +1,12 @@
+/* eslint-disable prettier/prettier */
 import { Module } from '@nestjs/common';
-import { AppController } from './app.controller';
-import { AppService } from './app.service';
+import { PrismaService } from './prisma/prisma.service';
+import { DeezerModule } from './deezer/deezer.module';
+import { AlbumModule } from './album/album.module';
+import { TrackModule } from './track/track.module';
 
 @Module({
-  imports: [],
-  controllers: [AppController],
-  providers: [AppService],
+  imports: [DeezerModule, AlbumModule, TrackModule],
+  providers: [PrismaService],
 })
 export class AppModule {}

@@ -16,6 +16,10 @@ datasource db {
 model Album {
   id               Int      @id @default(autoincrement())
   album_cover_image String
+  album_cover_small String
+  album_cover_medium String
+  album_cover_big  String
+  album_cover_xl   String
   album_title      String
   artist_name      String
   release_date     DateTime
@@ -28,4 +32,5 @@ model Track {
   duration Int
   album    Album  @relation(fields: [albumId], references: [id])
   albumId  Int
+  preview String
 }
