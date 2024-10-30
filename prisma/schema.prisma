@@ -18,7 +18,8 @@ model Album {
   album_cover_image String
   album_cover_small String
   album_cover_medium String
-  album_cover_big String
+  album_cover_big  String
+  album_cover_xl   String
   album_title      String
   artist_name      String
   release_date     DateTime

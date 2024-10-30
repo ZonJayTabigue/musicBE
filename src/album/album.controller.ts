@@ -8,8 +8,20 @@ export class AlbumController {
   constructor(private readonly albumService: AlbumService) {}
 
   @Get()
-  async getAlbums(@Query('page') page = 1, @Query('limit') limit = 10) {
+  async getAlbums(
+   @Query('page') page = 1,
+   @Query('limit') limit = 10
+  ) {
     return this.albumService.getAlbums(Number(page), Number(limit));
+  }
+
+  @Get('search')
+  async searchAlbums(
+   @Query('searchParam') searchParam: string,
+    @Query('page') page: number,
+    @Query('limit') limit: number,
+  ) {
+    return this.albumService.searchAlbums(String(searchParam), Number(page), Number(limit));
   }
 
   @Get(':id')
